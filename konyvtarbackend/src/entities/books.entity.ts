@@ -2,8 +2,8 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('books', { schema: 'books' })
 export class Books {
-  @PrimaryGeneratedColumn({ type: 'bigint', name: 'id', unsigned: true })
-  id: string;
+  @PrimaryGeneratedColumn()
+  id: number;
 
   @Column('varchar', { name: 'title', length: 255 })
   title: string;

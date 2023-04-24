@@ -2,7 +2,7 @@ import {
   Column,
   Entity,
   JoinColumn,
-  ManyToOne,
+  OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Books } from './books.entity';
@@ -12,9 +12,9 @@ export class Rentals {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne(() => Books)
+  @OneToOne(() => Books)
   @JoinColumn({ name: 'book_id' })
-  book: Books;
+  book_id: number;
 
   @Column()
   start_date: Date;
