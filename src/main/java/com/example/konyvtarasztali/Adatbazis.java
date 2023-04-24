@@ -35,4 +35,11 @@ public class Adatbazis {
 
         return konyvek;
     }
+
+    public boolean DeleteKonyv(int id) throws SQLException {
+        String sql = "DELETE FROM books WHERE id = ?";
+        PreparedStatement statement = conn.prepareStatement(sql);
+        statement.setInt(1, id);
+        return statement.executeUpdate() > 0;
+    }
 }
