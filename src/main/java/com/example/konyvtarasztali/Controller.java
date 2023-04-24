@@ -6,7 +6,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.sql.ClientInfoStatus;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +34,7 @@ public class Controller {
         oldalTC.setCellValueFactory(new PropertyValueFactory<>("page_count"));
         try {
             _db = new Adatbazis();
+            ReadKonyv();
         } catch (SQLException e) {
             Platform.runLater(() -> {
                 alert(Alert.AlertType.WARNING, "Hiba", e.getMessage());
